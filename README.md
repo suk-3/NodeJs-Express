@@ -1,6 +1,6 @@
 # NodeJs-Express Template
 
-This repository provides a basic template for a Node.js application using Express.js. Follow the instructions below to set up and run the application.
+This repository provides a basic template for a Node.js application using Express. Follow the instructions below to set up and run the application.
 
 ## Installation
 
@@ -33,7 +33,7 @@ This repository provides a basic template for a Node.js application using Expres
 
 ### Understanding the Code Structure
 
-1. The main application code is in the `index.js` file. This file sets up the Express.js server, defines routes, sets up middleware, and handles requests and responses.
+1. The main application code is in the `index.js` file. This file sets up the Express server, defines routes, sets up middleware, and handles requests and responses.
 
 2. Route definitions are kept in the `routes` folder. For each function, create a separate folder. For example, for a health check route, create a folder named `health` with the following structure:
     ```
@@ -43,43 +43,45 @@ This repository provides a basic template for a Node.js application using Expres
 
 ### Adding Routes
 
-1. In the `routes` folder, create a new folder for your function, for example, `Function`:
+1. In the `routes` folder, create a new folder for your function, for example, `functional`:
     ```
-    Function
+    functional
     └── controller.js
     ```
 
 2. Include the source in `route.js`:
     ```js
-    const info = require('./Function/controller');
-    router.get('/<routename>', info.functionality);
+    const info = require('./functional/controller');
+    router.get('/<routename>', info.methodName);
     ```
 
-#### Example for a health check route:
-    1. Create a folder named `health`:
-        ```
-        health
-        └── controller.js
-        ```
-    2. In `controller.js`, define the functionality:
-        ```js
-        // health/controller.js
-        const functionality = (req, res) => {
-            response = {}
-            //functiona Logic to be written here 
-            res.json(response);
-        };
+### Example for a Health Check Route
 
-        module.exports = {
-            functionality
-        };
-        ```
+1. Create a folder named `health`:
+    ```
+    health
+    └── controller.js
+    ```
 
-    3. Include the source in `route.js`:
-        ```js
-        const health = require('./health/controller');
-        router.get('/health', health.functionality);
-        ```
+2. In `controller.js`, define the functionality:
+    ```js
+    // health/controller.js
+    const functionality = (req, res) => {
+        response = {}
+        //functiona Logic to be written here 
+        res.json(response);
+    };
+
+    module.exports = {
+        functionality
+    };
+    ```
+
+3. Include the source in `route.js`:
+    ```js
+    const health = require('./health/controller');
+    router.get('/health', health.functionality);
+    ```
 
 ## Running the Application
 
@@ -99,4 +101,3 @@ This repository provides a basic template for a Node.js application using Expres
 1. Open a web browser.
 2. Navigate to `http://localhost:3000` (or the appropriate port specified in your application code).
 3. If everything is set up correctly, you should see your Node.js application running and responding to requests.
-
