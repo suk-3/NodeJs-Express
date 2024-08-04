@@ -1,0 +1,20 @@
+{
+  "name": "express-template",
+  "version": "1.0.0",
+  "description": "nodeJs express template",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Suhas U Kekuda",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "globals": "^15.0.0"
+  }
+}
