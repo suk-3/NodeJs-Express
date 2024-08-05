@@ -1,0 +1,42 @@
+{
+    "source": {
+        "include": [
+            "."
+        ],
+        "exclude": [
+            "node_modules",
+            "docs"
+        ],
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "opts": {
+        "destination": "./docs",
+        "recurse": true,
+        "readme": "README.md",
+        "verbose": true,
+        "private": false
+    },
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "templates": {
+        "theme": "cerulean",
+        "linenums": true,
+        "outputSourceFiles": true,
+        "dateFormat": "dddd, MMMM Do YYYY, h:mm:ss a",
+        "navType": "vertical",
+        "collapseSymbols": false,
+        "inverseNav": true,
+        "search": true
+    },
+    "babel": {
+        "sourceMaps": "inline",
+        "presets": [
+            "@babel/preset-env"
+        ]
+    },
+    "markdown": {
+        "parser": "gfm"
+    }
+}
